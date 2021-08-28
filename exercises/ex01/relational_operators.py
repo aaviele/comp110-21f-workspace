@@ -1,4 +1,4 @@
-"""relational operators"""
+"""relational operators."""
 
 __author__ = "730322189"
 
