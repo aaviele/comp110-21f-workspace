@@ -1,4 +1,4 @@
-"""input exercise."""
+"""input exercise.pyh"""
 
 __author__ = "730322189"
 
