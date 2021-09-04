@@ -14,7 +14,4 @@ while i < len(word):
         
     i = i + 1
 
-if print_this <= 0:
-    print("Count: 0")
- 
-print(print_this)
+print("Count: " + str(print_this))
