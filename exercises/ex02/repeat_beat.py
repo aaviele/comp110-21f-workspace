@@ -10,8 +10,10 @@ print_this: str = ""
 if num <= 0:
     print("No beat...")
 
-while i < num:
+while i < num - 1:
     print_this = beat + " " + print_this
     i = i + 1
+
+print_this = print_this + beat
 
 print(print_this)
