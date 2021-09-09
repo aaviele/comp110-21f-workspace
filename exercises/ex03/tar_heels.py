@@ -11,3 +11,5 @@ else:
         print("TAR")
     if num % 7 == 0:
         print("HEELS")
+    if num % 2 != 0 and num % 7 != 0:
+        print("CAROLINA")

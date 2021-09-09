@@ -4,18 +4,17 @@ __author__ = "730322189"
 
 word: str =  input("Enter a word: ")
 i: int = 0
-j: int = 0
-k: int = 0
+boolean_var: bool = False
 
 while i < len(word):
-    i = i + 1
-    while j > i + 1 and j < len(word):
-        if word[i] == word[j] and word[i] != "":
+    j: int = 0
+    k: int = 0
+    while j < len(word):
+        if word[i] == word[j]:
             k = k + 1
         j = j + 1
+        if k > 1:
+            boolean_var: bool = True
+    i = i + 1
 
-if k < 1:
-    print("Found duplicate: True")
-else:
-    print("Found duplicate: False")
-
+print("Found Duplicate: " + str(boolean_var))
