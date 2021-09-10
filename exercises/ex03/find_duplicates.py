@@ -14,4 +14,4 @@ while counter_iterations < len(word):
         counter_comp = counter_comp + 1
     counter_iterations = counter_iterations + 1
 
-print("Found Duplicate: " + str(counter_dups > 0))
+print("Found duplicate: " + str(counter_dups > 0))
