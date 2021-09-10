@@ -2,7 +2,7 @@
 
 __author__ = "730322189"
 
-word: str =  input("Enter a word: ")
+word: str = input("Enter a word: ")
 counter_iterations: int = 0
 counter_dups: int = 0
 
