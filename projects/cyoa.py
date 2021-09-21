@@ -1,13 +1,17 @@
-"""create your own adventure project"""
+"""create your own adventure project."""
 
 __author__ = "730322189"
 
+NAMED_CONSTANT: str = '\U0001F44B'
+
+
 from random import randint
+
 
 points: int = 0
 player: str = ""
 restart: bool = True
-NAMED_CONSTANT: str = '\U0001F44B'
+
 
 def main() -> None:
     global points
@@ -25,6 +29,7 @@ def main() -> None:
             print(f"Goodbye {player}!")
             restart = False
 
+
 def heads_guess():
     global points
     global restart
@@ -35,6 +40,7 @@ def heads_guess():
     print(f"The correct answer was {correct_heads}.")
     print(f"You have {points} adventure point(s).")
     restart = bool(input("Do you want to continue playing? Enter True for yes. Enter False for no. "))
+
 
 def tails_guess():
     global points
@@ -47,10 +53,12 @@ def tails_guess():
     print(f"You have {points} adventure point(s).")
     restart = bool(input("Do you want to continue playing? Enter True for yes. Enter False for no. "))
 
+
 def greet():
     global player
     player = input("What is your name? ")
     print(f"Welcome {player}! {NAMED_CONSTANT} In this game, you  will try to guess the number of heads or tails out of 10 coinflips. For each correct guess, you will earn one adventure point.")
+
 
 if __name__ == "__main__":
     main()
