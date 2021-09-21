@@ -54,7 +54,7 @@ def tails_guess():
     restart = bool(input("Do you want to continue playing? Enter True for yes. Enter False for no. "))
 
 
-def greet():
+def greet() -> None:
     global player
     player = input("What is your name? ")
     print(f"Welcome {player}! {NAMED_CONSTANT} In this game, you  will try to guess the number of heads or tails out of 10 coinflips. For each correct guess, you will earn one adventure point.")
