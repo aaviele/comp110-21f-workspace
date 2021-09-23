@@ -1,11 +1,10 @@
-"""create your own adventure project."""
+"""Create your own adventure project."""
+
+from random import randint
 
 __author__ = "730322189"
 
 NAMED_CONSTANT: str = '\U0001F44B'
-
-
-from random import randint
 
 
 points: int
@@ -14,6 +13,7 @@ restart: bool
 
 
 def main() -> None:
+    """This connects all the other functions."""
     global points
     global player
     global restart
@@ -21,7 +21,7 @@ def main() -> None:
     player = ""
     restart = True
     greet()
-    while restart == True:
+    while restart:
         enter_the_game: str = input("Would you like to guess heads, guess tails, or end the game? Enter H for heads. Enter T for tails. Enter E for end game. ")
         if enter_the_game == "H":
             heads_guess()
@@ -36,7 +36,8 @@ def main() -> None:
             restart = False
 
 
-def heads_guess():
+def heads_guess() -> None:
+    """Checks if guess for number of heads is correct and gives one point if so."""
     global points
     global restart
     global player
@@ -48,7 +49,8 @@ def heads_guess():
     print(f"You have {points} adventure point(s).")
 
 
-def tails_guess(points: int, player: str):
+def tails_guess(points: int, player: str) -> int:
+    """Checks if guess for number of tails is correct and gives one point if so."""
     num: int = int(input(f"{player}, guess how many tails out of 10 coinflips: "))
     correct_tails: int = randint(0, 10)
     if num == correct_tails:
@@ -57,18 +59,21 @@ def tails_guess(points: int, player: str):
     return points
 
 
-def greet():
+def greet() -> None:
+    """Greets player and gives game instructions!"""
     global player
     player = input("What is your name? ")
     print(f"Welcome, {player}! {NAMED_CONSTANT} In this game, you  will try to guess the number of heads or tails out of 10 coinflips. For each correct guess, you will earn one adventure point.")
 
 
 def menu() -> None:
+    """Asks player if they want to continue playing and continues or ends the game accordingly."""
     global restart
     global player
+    global points
     continue_game: str = input(f"{player}, do you want to continue playing? Enter Y for yes. Enter N for no. ")
     if continue_game == "Y":
-         restart = True
+        restart = True
     if continue_game == "N":
         print(f"You have earned {points} adventure point(s).")
         print(f"Goodbye, {player}!")
