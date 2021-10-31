@@ -4,7 +4,8 @@ __author__ = "730322189"
 
 
 def main() -> None:
-     print(favorite_color({"Marc": "yellow", "Ezri": "blue", "Kris": "blue"}))
+    """Entrypoint."""
+    print(favorite_color({"Marc": "yellow", "Ezri": "blue", "Kris": "blue"}))
 
 
 def invert(given: dict[str, str]) -> dict[str, str]:
@@ -27,7 +28,7 @@ def invert(given: dict[str, str]) -> dict[str, str]:
 def favorite_color(names_and_colors: dict[str, str]) -> str:
     """Check which color appears most frequently."""
     colors: list[str] = list()
-    counting: dict[str,int] = dict()
+    counting: dict[str, int] = dict()
     favorite: str
     for key in names_and_colors:
         colors.append(names_and_colors[key])
@@ -36,9 +37,9 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
             counting[color] += 1
         else:
             counting[color] = 1
+    max: int = 0
     for item in counting:
-        max: int = 0
-        if counting[item] > 0:
+        if counting[item] > max:
             max = counting[item]
             favorite = item
     return favorite
@@ -46,7 +47,7 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
 
 def count(freq: list[str]) -> dict[str, int]:
     """Create a dictionary that counts frequency of values."""
-    store: dict[str,int] = dict()
+    store: dict[str, int] = dict()
     for item in freq:
         if item in store:
             store[item] += 1

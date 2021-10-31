@@ -37,7 +37,7 @@ def test_favorite_colors_case_1() -> None:
 
 def test_favorite_colors_case_2() -> None:
     """Test for favorite_color, use case 2."""
-    names_and_colors: dict[str, str] = {"Heather": "yellow", "Jon": "green", "Bob": "yellow"}
+    names_and_colors: dict[str, str] = {"Heather": "yellow", "Jon": "green", "Bob": "yellow", "Helen": "green"}
     assert favorite_color(names_and_colors) == "yellow"
 
 
@@ -51,3 +51,9 @@ def test_count_case_1() -> None:
     """Test for count, use case 1."""
     freq: list[str] = ['blue', 'yellow', 'yellow']
     assert count(freq) == {'blue': 1, 'yellow': 2}
+
+
+def test_count_case_2() -> None:
+    """Test for count, use case 2."""
+    freq: list[str] = ['purple', 'green', 'pink', 'green']
+    assert count(freq) == {'purple': 1, 'green': 2, 'pink': 1}

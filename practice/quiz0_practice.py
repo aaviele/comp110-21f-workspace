@@ -1,14 +1,18 @@
-def plus_two(y: int, zs: list[int]) -> list[int]:
-    global x
-    x += 2
-    y += 2
-    zs[0] += 2
-    result: list[int] = [x, y, zs[0]]
-    return result
+def zip_dict(ks: list[str], vs: list[str]) -> dict[str, str]:
+    d: dict[str, str] = {}
+
+    if len(ks) != len(vs):
+        return d
+
+    i: int = 0
+    while i < len(ks):
+        d[ks[i]] = vs[i]
+        i += 1
+
+    return d
 
 
-x: int = 1
-y: int = 2
-zs: list[int] = [3]
-
-print(plus_two(y, zs))
+a: list[str] = ["B", "O", "O"]
+b: list[str] = ["Bat", "Ogre", "Owl"]
+c: dict[str, str] = zip_dict(a, b)
+print(c)
